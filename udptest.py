@@ -47,3 +47,8 @@ while True:
 # We have four more empty spaces, that is, in parameter 17 we have only 4 datas.
 # In our byte sequence, after the heading, those 4 bytes correspond to pitch, that's why we send them to the struct.unpack method, which returns the byte values
 # as simple precision floating point (32 bits).
+#
+# If we get something like "$DREF@2940.0000":
+# "$" is the initial character of the sequence and the informations are separated by ",". Everything is a character.
+# For example, if we send com1_fre, com1stby_freq, com2_fre, com2stby_freq, the sequence will be $118.9,121.5,119.805,122.1000000,
+# In this case we need to know the sequence order to recover the information.
